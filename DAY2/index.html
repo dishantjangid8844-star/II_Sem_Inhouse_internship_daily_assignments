@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Admission Form</title>
+    <link rel="stylesheet" href="admission.css">
+</head>
+<body>
+
+    <form action="#" method="post">
+        <h1>College Admission Form</h1>
+        <p class="subtitle">Session 2026-27</p>
+
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+        <label for="phone">Phone Number</label>
+        <input type="text" id="phone" name="phone" placeholder="10-digit mobile number" maxlength="10" required>
+
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <label>Gender</label>
+        <div class="radio-group">
+            <label class="inline-label"><input type="radio" name="gender" value="male" required> Male</label>
+            <label class="inline-label"><input type="radio" name="gender" value="female"> Female</label>
+            <label class="inline-label"><input type="radio" name="gender" value="other"> Other</label>
+        </div>
+
+        <label for="department">Department Applying For</label>
+        <select id="department" name="department" required>
+            <option value="">-- Select Department --</option>
+            <option value="cse">Computer Science Engineering</option>
+            <option value="it">Information Technology</option>
+            <option value="ece">Electronics & Communication</option>
+            <option value="mech">Mechanical Engineering</option>
+            <option value="civil">Civil Engineering</option>
+        </select>
+
+        <label for="address">Permanent Address</label>
+        <textarea id="address" name="address" placeholder="House no, street, city, state, PIN code" required></textarea>
+
+        <label for="password">Create Password</label>
+        <input type="password" id="password" name="password" placeholder="Minimum 8 characters" minlength="8" required>
+
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter password" minlength="8" required>
+
+        <div class="checkbox-row">
+            <input type="checkbox" id="terms" name="terms" required>
+            <label for="terms" class="inline-label">I agree to the terms and conditions of admission</label>
+        </div>
+
+        <button type="submit">Submit Application</button>
+    </form>
+
+</body>
+</html>

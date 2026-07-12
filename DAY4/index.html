@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1 id="mainHeading">Welcome to My Landing Page</h1>
+        <nav>
+            <a href="#counterSection">Counter</a>
+            <a href="#formSection">Contact</a>
+            <a href="#" id="darkModeBtn">Toggle Dark Mode</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="greetSection">
+            <h2>Say Hello</h2>
+            <label for="visitorName">Your Name:</label>
+            <input type="text" id="visitorName" placeholder="Type your name">
+            <p id="greetingOutput"></p>
+        </section>
+
+        <section id="counterSection">
+            <h2>Click Counter</h2>
+            <p>You've clicked <span id="clickTotal">0</span> times.</p>
+            <button id="incrementBtn">Click Me</button>
+            <button id="resetBtn">Reset</button>
+        </section>
+
+        <section id="formSection">
+            <h2>Contact Form</h2>
+            <form id="contactForm">
+                <label for="userName">Name</label><br>
+                <input type="text" id="userName" placeholder="Enter your name"><br>
+                <span class="error" id="nameError"></span><br>
+
+                <label for="userEmail">Email</label><br>
+                <input type="text" id="userEmail" placeholder="Enter your email"><br>
+                <span class="error" id="emailError"></span><br>
+
+                <button type="submit">Submit</button>
+            </form>
+            <p id="formSuccess"></p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Built during Day 4 &mdash; JavaScript Fundamentals</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

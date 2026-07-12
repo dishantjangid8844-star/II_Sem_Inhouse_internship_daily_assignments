@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Post Feed</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        body {
+            background-color: #f4f6f9;
+        }
+        .feed-header {
+            background-color: #34495e;
+            color: white;
+            padding: 25px 0;
+            margin-bottom: 25px;
+        }
+        .post-card {
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            height: 100%;
+        }
+        .post-card.accent {
+            background-color: #eaf4f4;
+        }
+        .post-id-badge {
+            background-color: #34495e;
+        }
+        .status-message {
+            text-align: center;
+            padding: 40px 0;
+            font-size: 18px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<div class="feed-header text-center">
+    <h1>Live Post Feed</h1>
+    <p class="mb-0">Pulled live from JSONPlaceholder's /posts endpoint</p>
+</div>
+
+<div class="container pb-5">
+
+    <div class="row mb-3 align-items-center">
+        <div class="col-md-6 mb-2 mb-md-0">
+            <input type="text" id="searchInput" class="form-control" placeholder="Search posts by title...">
+        </div>
+        <div class="col-md-6 text-md-end">
+            <span class="badge bg-secondary" id="countBadge">Loading...</span>
+        </div>
+    </div>
+
+    <div id="postContainer" class="row g-4">
+        <div class="status-message">Loading posts...</div>
+    </div>
+
+</div>
+
+<script>
+    let allPosts = [];
+
+    function renderPosts(posts) {
+        const $container = $("#postContainer");
+
+        if (posts.length === 0) {
+            $container.html(`<div class="status-message">No posts match your search.</div>`);
+            return;
+        }
+
+        let html = "";
+
+        posts.forEach((post, index) => {
+            const accentClass = index % 2 === 0 ? "accent" : "";
+
+            html += `
+                <div class="col-md-4">
+                    <div class="card post-card ${accentClass} p-3">
+                        <span class="badge post-id-badge mb-2" style="width: fit-content;">Post #${post.id}</span>
+                        <h6 class="text-capitalize">${post.title}</h6>
+                        <p class="text-muted small">${post.body.substring(0, 90)}...</p>
+                    </div>
+                </div>
+            `;
+        });
+
+        $container.html(html);
+    }
+
+    function loadPosts() {
+        $("#postContainer").html(`<div class="status-message">⏳ Loading posts...</div>`);
+        $("#countBadge").text("Loading...");
+
+        fetch("https://jsonplaceholder.typicode.com/posts")
+            .then(res => res.json())
+            .then(data => {
+                allPosts = data;
+                renderPosts(allPosts);
+                $("#countBadge").text(`Showing ${allPosts.length} posts`);
+            })
+            .catch(() => {
+                $("#postContainer").html(`
+                    <div class="status-message">
+                        ❌ Unable to load posts right now.<br>
+                        <button class="btn btn-outline-dark btn-sm mt-2" onclick="loadPosts()">Retry</button>
+                    </div>
+                `);
+                $("#countBadge").text("--");
+            });
+    }
+
+    // Live search/filter
+    $("#searchInput").on("keyup", function () {
+        const query = $(this).val().toLowerCase();
+        const filtered = allPosts.filter(post =>
+            post.title.toLowerCase().includes(query)
+        );
+        renderPosts(filtered);
+        $("#countBadge").text(`Showing ${filtered.length} posts`);
+    });
+
+    // Initial load
+    loadPosts();
+</script>
+
+</body>
+</html>

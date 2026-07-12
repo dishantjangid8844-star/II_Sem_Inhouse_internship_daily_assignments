@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Student Profile</title>
+  </head>
+  <body>
+
+    <!-- ===== Profile Section ===== -->
+    <div>
+      <h1>Arjun Verma</h1>
+      <h3>B.Tech &mdash; Information Technology</h3>
+      <p>Malaviya National Institute of Technology</p>
+
+      <img
+        src="images/profile.jpg"
+        alt="Profile photo of Arjun Verma"
+        width="180"
+        height="180"
+      />
+    </div>
+
+    <hr />
+
+    <!-- ===== About Me (using description list) ===== -->
+    <h2>Quick Facts</h2>
+    <dl>
+      <dt>Hometown</dt>
+      <dd>Jaipur, Rajasthan</dd>
+
+      <dt>Branch</dt>
+      <dd>Information Technology</dd>
+
+      <dt>Current Year</dt>
+      <dd>2nd Year</dd>
+
+      <dt>Hobby</dt>
+      <dd>Chess and competitive coding</dd>
+    </dl>
+
+    <hr />
+
+    <!-- ===== Education Table ===== -->
+    <h2>Academic Record</h2>
+    <table border="1" cellpadding="8" cellspacing="0" width="90%">
+      <thead>
+        <tr bgcolor="#eeeeee">
+          <th>Level</th>
+          <th>School / College</th>
+          <th>Year of Passing</th>
+          <th>Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr align="center">
+          <td>B.Tech (IT)</td>
+          <td>MNIT Jaipur</td>
+          <td>Pursuing</td>
+          <td>8.4 CGPA</td>
+        </tr>
+        <tr align="center">
+          <td>12th Grade</td>
+          <td>St. Xavier's School</td>
+          <td>2024</td>
+          <td>92%</td>
+        </tr>
+        <tr align="center">
+          <td>10th Grade</td>
+          <td>St. Xavier's School</td>
+          <td>2022</td>
+          <td>94%</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+
+    <!-- ===== Skills ===== -->
+    <h2>What I Bring to the Table</h2>
+
+    <span><b>Technical:</b></span>
+    <ul>
+      <li>HTML &amp; basic CSS</li>
+      <li>Java</li>
+      <li>Data Structures (learning)</li>
+    </ul>
+
+    <span><b>Personal:</b></span>
+    <ol>
+      <li>Problem Solving</li>
+      <li>Adaptability</li>
+      <li>Public Speaking</li>
+    </ol>
+
+    <hr />
+
+    <!-- ===== Favourite Website ===== -->
+    <h2>A Site I Keep Coming Back To</h2>
+    <p>
+      <a href="https://www.freecodecamp.org" target="_blank">freeCodeCamp</a>
+      &mdash; it's where I picked up most of what I know about coding so far.
+    </p>
+
+    <hr />
+
+    <!-- ===== Contact Form ===== -->
+    <h2>Get In Touch</h2>
+    <form action="#" method="post">
+      <p>
+        <label for="fname">Full Name:</label><br />
+        <input type="text" id="fname" name="fname" placeholder="Arjun Verma" />
+      </p>
+
+      <p>
+        <label for="femail">Email Address:</label><br />
+        <input type="email" id="femail" name="femail" placeholder="arjun@example.com" />
+      </p>
+
+      <p>
+        <label for="fmsg">Your Message:</label><br />
+        <textarea id="fmsg" name="fmsg" rows="5" cols="40" placeholder="Type your message..."></textarea>
+      </p>
+
+      <button type="submit">Submit</button>
+    </form>
+
+  </body>
+</html>

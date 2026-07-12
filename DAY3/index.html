@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Application</title>
+    <link rel="stylesheet" href="admission2.css">
+</head>
+<body>
+
+    <div class="page-wrapper">
+        <form action="#" method="post">
+            <div class="form-header">
+                <h1>Apply for Admission</h1>
+                <p>Fill in every field carefully before submitting.</p>
+            </div>
+
+            <fieldset>
+                <legend>Personal Details</legend>
+
+                <div class="field">
+                    <label for="applicantName">Applicant Name</label>
+                    <input type="text" id="applicantName" name="applicantName" placeholder="e.g. Neha Kapoor" required>
+                </div>
+
+                <div class="field">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+
+                <div class="field">
+                    <label>Gender</label>
+                    <div class="radio-row">
+                        <label class="inline-label"><input type="radio" name="gender" value="female" required> Female</label>
+                        <label class="inline-label"><input type="radio" name="gender" value="male"> Male</label>
+                        <label class="inline-label"><input type="radio" name="gender" value="other"> Other</label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Contact Details</legend>
+
+                <div class="field">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="name@example.com" required>
+                </div>
+
+                <div class="field">
+                    <label for="phone">Contact Number</label>
+                    <input type="text" id="phone" name="phone" placeholder="10-digit number" maxlength="10" required>
+                </div>
+
+                <div class="field">
+                    <label for="city">City</label>
+                    <input type="text" id="city" name="city" placeholder="Your current city" required>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Course Details</legend>
+
+                <div class="field">
+                    <label for="program">Program</label>
+                    <select id="program" name="program" required>
+                        <option value="">Choose a program</option>
+                        <option value="btech-cse">B.Tech - Computer Science</option>
+                        <option value="btech-ece">B.Tech - Electronics</option>
+                        <option value="bca">BCA</option>
+                        <option value="mba">MBA</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="prevSchool">Previous Institution</label>
+                    <input type="text" id="prevSchool" name="prevSchool" placeholder="Name of your last school/college" required>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Account Security</legend>
+
+                <div class="field">
+                    <label for="pwd">Password</label>
+                    <input type="password" id="pwd" name="pwd" placeholder="At least 8 characters" minlength="8" required>
+                </div>
+
+                <div class="field">
+                    <label for="pwdConfirm">Confirm Password</label>
+                    <input type="password" id="pwdConfirm" name="pwdConfirm" placeholder="Re-type your password" minlength="8" required>
+                </div>
+            </fieldset>
+
+            <div class="terms-row">
+                <input type="checkbox" id="agree" name="agree" required>
+                <label for="agree" class="inline-label">I confirm the above details are accurate</label>
+            </div>
+
+            <button type="submit">Apply Now</button>
+        </form>
+    </div>
+
+</body>
+</html>
